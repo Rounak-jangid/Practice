@@ -73,7 +73,7 @@
 //     document.querySelector("#content").innerHTML = text;
 // }
 
-
+// function to tell the convert the temperature from celsius to fahrenheit
 function myFunc() {
     var x, text;
     x= Number(document.getElementById("cel").value);
@@ -85,6 +85,7 @@ function myFunc() {
     document.getElementById("demo").innerHTML = y;
 }
 
+// function to calculate the value of sin
 function triGno() {
     var a,b,text1;
     x=document.getElementById("angle").value;
@@ -93,15 +94,21 @@ function triGno() {
     document.getElementById("demo1").innerHTML = y;
 }
 
-// function greeting() {
+// time and greeting of top
     var greeting;
+    var _time;
     var time = new Date().getHours();
     var time_min = new Date().getMinutes();
     var day;
+    var p = new Date().getDay();
+    var q = 
+    // ,r;
+    _time = (time > 12) ? "PM" : "AM"
+
 
     if ( time < 12) {
         greeting = "Hello Everyone! <br> Good Morning";
-    } else if (time < 20) {
+    } else if (time < 20 || time < 6) {
         greeting = "Hello Everyone! <br> Good Day";
     } else {
         greeting = "Hello Everyone! <br> Good Evening";
@@ -131,5 +138,49 @@ function triGno() {
             break;
     }
 
-    document.querySelector("#title").innerHTML = greeting + " " + day + " " + time + ":" + time_min;
-// }
+    switch(new Date().getMonth()) {
+        case 0:
+            p = "January";
+            break;
+        case 1:
+            p = "February";
+            break;
+        case 2:
+            p = "March";
+            break;
+        case 3:
+            p = "April";
+            break;
+        case 4:
+            p = "May";
+            break;
+        case 5:
+            p = "June";
+            break;
+        case 6:
+            p = "July";
+            break;
+        case 7:
+            p = "August";
+            break;
+        case 8:
+            p = "September";
+            break;
+        case 9:
+            p = "October";
+            break;
+        case 10:
+            p = "November";
+            break;
+        case 11:
+            p = "December";
+            break;
+    }
+
+    var r = new Date().getFullYear();
+
+    document.querySelector("#title").innerHTML = greeting + "<br>" + day +
+     " " + p + " " + new Date().getDate() + ", " + r + 
+    "<br>" + time + ":" + time_min + " " + _time;
+
+
